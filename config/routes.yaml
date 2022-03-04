@@ -1,3 +1,6 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+root:
+  path: /
+  defaults:
+    _controller: App\Controller\BookController:books
+    path: /books
+    permanent: true

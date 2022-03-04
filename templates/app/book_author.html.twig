@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Année de publication</th>
+            <th>Genre</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td><a href="{{ path('app_book_id', {'id': book.id}) }}">{{ book.title }}</a></td>
+                <td><a href="{{ path('app_book_release', {'date': book.releaseDate}) }}">{{ book.releaseDate }}</a></td>
+                <td><a href="{{ path('app_book_type', {'id': book.bookType.id}) }}">{{ book.bookType.name }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
